@@ -1,0 +1,10 @@
+
+<!-- <app-add-todo></app-add-todo>
+<app-delete-todo></app-delete-todo> -->
+
+<!-- <app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet> -->
+
+
+<!-- src/app/app.component.html -->
+<app-add-todo [todoToEdit]="todoToEdit"></app-add-todo>
+<app-delete-todo [todos]="todos" (editTodoEvent)="onEditTodoEvent($event)"></app-delete-todo>

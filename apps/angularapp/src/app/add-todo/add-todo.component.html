@@ -1,0 +1,14 @@
+
+
+
+<div class="container mt-10 bg-white border border-gray-300 rounded-lg p-5 shadow-md w-full text-center">
+    <h1 class="text-[#4CAF50] text-2xl mt-2">Create New Ticket</h1>
+    <div class="input-group mt-2">
+        <input id="title" [(ngModel)]="title" placeholder="Title"
+            class="w-[calc(100%-22px)] h-9 p-2 mb-2 border border-gray-300 rounded-md text-base" required/>
+        <input [(ngModel)]="priority" type="number" min="1" max="5" placeholder="Priority (1-5)"
+            class="h-9 p-4 mb-2 border border-gray-300 rounded-md text-base" required/>
+    </div>
+    <button (click)="addOrUpdateTodo()"
+        class="bg-[#4CAF50] text-white p-2.5 border-none rounded-md cursor-pointer text-base m-1">Add New</button>
+</div>

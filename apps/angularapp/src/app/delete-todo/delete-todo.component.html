@@ -1,0 +1,33 @@
+
+
+<div class="container mt-10 bg-white border border-gray-300 rounded-lg p-5 shadow-md w-full text-center">
+    <h1 class="text-[#4CAF50] text-2xl mb-5">Sprint Tickets</h1>
+    <div *ngIf="todos.length > 0 else else_block">
+        <table class="w-full border-collapse mb-5">
+            <thead>
+                <tr>
+                    <th class="bg-gray-100 border border-gray-300 p-2 text-left">Title</th>
+                    <th class="bg-gray-100 border border-gray-300 p-2 text-left">Date</th>
+                    <th class="bg-gray-100 border border-gray-300 p-2 text-left">Priority</th>
+                    <th class="bg-gray-100 border border-gray-300 p-2 text-left">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let todo of todos">
+                    <td class="border border-gray-300 p-2">{{ todo.title }}</td>
+                    <td class="border border-gray-300 p-2">{{ formatDate(todo.timestamp) }}</td>
+                    <td class="border border-gray-300 p-2">{{ todo.priority }}</td>
+                    <td class="border border-gray-300 p-2">
+                        <button id="buttonEdit" (click)="editTodo(todo)"
+                            class="bg-[#0a2be8] text-white p-2.5 border-none rounded-md cursor-pointer text-base m-1">Edit</button>
+                        <button id="buttonDelete" (click)="deleteTodo(todo.id)"
+                            class="bg-[#f44336] text-white p-2.5 border-none rounded-md cursor-pointer text-base m-1">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <ng-template #else_block>
+        <h1> THERE ARE NO TICKETS YET </h1>
+    </ng-template>
+</div>
