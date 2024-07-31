@@ -20,7 +20,7 @@
       "use": "@vercel/node"
     },
      {
-      "src": "shared-data/src/**/*",
+      "src": "shared-data/src/lib/**/*",
       "use": "@vercel/static-build"
     }
   ],
