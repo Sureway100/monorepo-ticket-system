@@ -20,13 +20,14 @@
       "use": "@vercel/node"
     },
      {
-      "src": "shared-data/src/lib/**/*",
+      "src": "shared-data/package.json",
       "use": "@vercel/static-build"
     }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/index.js" },
     { "src": "/apps/(.*)", "dest": "/apps/reactapp/$1" },
-    { "src": "/apps(.*)", "dest": "/apps/angularapp/$1" }
+    { "src": "/apps(.*)", "dest": "/apps/angularapp/$1" },
+    { "src": "/shared-data(.*)", "dest": "/shared-data/src/lib/todo.service.ts" }
   ]
 }
