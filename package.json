@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start:api": "json-server --watch db.json --port 3001"
+    "start:apix": "json-server --watch db.json --port 3001",
+    "build:angular": "nx serve angularapp --port 4201",
+    "build:react": "nx serve reactapp",
+    "start:api": "node api/index.js",
+    "build": "concurrently \"npm run start:api\" \"npm run build:angular\" \"npm run build:react\""
   },
   "private": true,
   "dependencies": {
@@ -20,6 +24,8 @@
     "@nx/angular": "19.5.3",
     "autoprefixer": "^10.4.19",
     "axios": "^1.7.2",
+    "concurrently": "^8.2.2",
+    "json-server": "^0.16.3",
     "postcss": "^8.4.40",
     "react": "18.3.1",
     "react-dom": "18.3.1",
@@ -79,7 +85,6 @@
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
     "jest-preset-angular": "~14.1.0",
-    "json-server": "^1.0.0-beta.1",
     "nx": "19.5.3",
     "prettier": "^2.6.2",
     "react-refresh": "^0.10.0",

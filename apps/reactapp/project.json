@@ -11,6 +11,9 @@
       "options": {
         "jestConfig": "apps/reactapp/jest.config.ts"
       }
+    },
+    "scripts": {
+      "build": "react-scripts build"
     }
   }
 }
